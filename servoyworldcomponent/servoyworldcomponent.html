@@ -1,0 +1,15 @@
+<div>
+	<div>
+<!-- input field with dataprovider binding (ng-model) and a class binding -->
+		<input type="text"  
+			   ng-class='model.fieldstyleclass' 
+			   ng-model="model.value">
+<!-- button with a label text property binding and a onclick handler -->
+		<button svy-click='handlers.click($event)'
+		        ng-class='model.buttonstyleclass'>{{model.text}}</button>
+	</div>
+<!-- some structure that is shown based on a property (ng-if) and uses a repeater to repeat over a the valuelist items -->
+	<div ng-if="!model.hidevalues" class="sw_comp_values">
+		<div ng-repeat="item in model.values track by $index">{{item.displayValue}}</div>
+	</div>
+</div>

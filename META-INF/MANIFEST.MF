@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-Name: ServoyWorldPackage
+Bundle-SymbolicName: servoyworld
+Package-Type: Web-Component
+Bundle-Version: 1.0.0
+
+Name: servoyworldcomponent/servoyworldcomponent.spec
+Web-Component: True
+
