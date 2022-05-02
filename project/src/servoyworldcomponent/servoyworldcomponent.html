@@ -1,0 +1,18 @@
+<!-- #element is needed for letting the ServoyBaseComponent know which element is the base native element, without it svyOnInit is not called-->
+<div #element>
+	<div>
+<!-- input field with dataprovider binding (ngModel) and a ngClass binding, without the "model" directy mapping on the input properties of the ts file -->
+<!--  ngClass/ngModel can can only be used because the module of this class imports angular/forms and angular/common --> 		
+		<input type="text"  
+                [ngClass]="fieldstyleclass"
+                [ngModel]="value"
+                (ngModelChange)="valueChanged($event)">
+<!-- button with a label text property binding and a onclick handler -->
+		<button (click)='click($event)'
+		       [ngClass]='buttonstyleclass'>{{text}}</button>
+	</div>
+<!-- some structure that is shown based on a property (*ngIf) and uses a repeater (*ngFor) to repeat over a the valuelist items -->
+	<div *ngIf="!hidevalues" class="sw_comp_values">
+		<div *ngFor="let item of values">{{item.displayValue}}</div>
+	</div>
+</div>
