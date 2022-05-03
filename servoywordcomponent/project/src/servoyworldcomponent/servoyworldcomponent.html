@@ -10,11 +10,10 @@
                 (ngModelChange)="valueChanged($event)" #input>
 <!-- button with a label text property binding and a onclick handler -->
 <!-- here you don't see the ngClass but we use a #button to set the style class through code'-->
-		<button [id]="servoyApi.getMarkupId() + '_button'"
-		       #button>{{text}}</button>
+		<button [id]="servoyApi.getMarkupId() + '_button'" #button>{{text}}</button>
 	</div>
 <!-- some structure that is shown based on a property (*ngIf) and uses a repeater (*ngFor) to repeat over a the valuelist items -->
 	<div *ngIf="!hidevalues" class="sw_comp_values">
-		<div *ngFor="let item of values">{{item.displayValue}}</div>
+		<span style="display: block;" *ngFor="let item of values">{{item.displayValue}}</span>
 	</div>
 </div>
