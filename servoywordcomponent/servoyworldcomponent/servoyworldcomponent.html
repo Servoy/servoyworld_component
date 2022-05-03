@@ -1,11 +1,11 @@
-<div>
+<div id="{{::model.svyMarkupId}}">
 	<div>
 <!-- input field with dataprovider binding (ng-model) and a class binding -->
-		<input type="text"  
+		<input type="text"  id="{{::model.svyMarkupId}}_input"
 			   ng-class='model.fieldstyleclass' 
 			   ng-model="model.value">
 <!-- button with a label text property binding and a onclick handler -->
-		<button svy-click='handlers.click($event)'
+		<button svy-click='handlers.click($event)' id="{{::model.svyMarkupId}}_button"
 		        ng-class='model.buttonstyleclass'>{{model.text}}</button>
 	</div>
 <!-- some structure that is shown based on a property (ng-if) and uses a repeater to repeat over a the valuelist items -->
