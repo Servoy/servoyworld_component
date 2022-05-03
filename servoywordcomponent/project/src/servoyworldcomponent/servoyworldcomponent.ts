@@ -28,7 +28,10 @@ export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
    
 // this is a field that is a View element pointing to the '#button' dom element, so you have direct access to this in code   
    @ViewChild('button') button: ElementRef<HTMLButtonElement>;
-   
+
+// this is a field that is a View element pointing to the '#input' dom element, so you have direct access to this in code to do requestFocus() see below
+   @ViewChild('input') input: ElementRef<HTMLInputElement>;
+      
     constructor(protected readonly renderer: Renderer2, protected cdRef: ChangeDetectorRef) {
          super(renderer, cdRef);
     }
@@ -62,5 +65,11 @@ export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
     valueChanged(data: any) { 
         this.value = data;
         this.valueChange.emit(this.value);
+    }
+
+    // api function can just be added as public functions on the component class itself    
+    requestFocus() {
+        // this uses the ElementRef ViewChild field above to call focus() on the native dom element
+        this.input.nativeElement.focus();
     }
 }

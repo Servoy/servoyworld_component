@@ -7,7 +7,7 @@
 		<input type="text" [id]="servoyApi.getMarkupId() + '_input'"  
                 [ngClass]="fieldstyleclass"
                 [ngModel]="value"
-                (ngModelChange)="valueChanged($event)">
+                (ngModelChange)="valueChanged($event)" #input>
 <!-- button with a label text property binding and a onclick handler -->
 <!-- here you don't see the ngClass but we use a #button to set the style class through code'-->
 		<button [id]="servoyApi.getMarkupId() + '_button'"
