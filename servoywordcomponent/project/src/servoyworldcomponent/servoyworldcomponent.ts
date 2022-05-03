@@ -1,10 +1,11 @@
-import { Component, Input, SimpleChanges, Renderer2, ChangeDetectorRef, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, SimpleChanges, Renderer2, ChangeDetectorRef, EventEmitter, Output, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 // servoy public is the interface between the component and the Titanium NGClient runtime.
 import { ServoyBaseComponent, IValuelist } from '@servoy/public';
 
 @Component({
     selector: 'servoyworld-servoyworldcomponent',
-    templateUrl: './servoyworldcomponent.html'
+    templateUrl: './servoyworldcomponent.html',
+     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
 // ServoyBaseComponent is extended from the public api to inherit basic Servoy behavior 
