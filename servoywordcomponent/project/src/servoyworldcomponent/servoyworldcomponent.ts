@@ -5,7 +5,7 @@ import { ServoyBaseComponent, IValuelist } from '@servoy/public';
 @Component({
     selector: 'servoyworld-servoyworldcomponent',
     templateUrl: './servoyworldcomponent.html',
-     changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
 // ServoyBaseComponent is extended from the public api to inherit basic Servoy behavior 
