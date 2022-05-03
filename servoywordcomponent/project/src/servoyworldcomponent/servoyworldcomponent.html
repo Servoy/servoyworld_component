@@ -2,14 +2,16 @@
 <div #element [id]="servoyApi.getMarkupId()">
 	<div>
 <!-- input field with dataprovider binding (ngModel) and a ngClass binding, without the "model" directy mapping on the input properties of the ts file -->
-<!--  ngClass/ngModel can can only be used because the module of this class imports angular/forms and angular/common --> 		
+<!--  ngClass/ngModel can can only be used because the module of this class imports angular/forms and angular/common -->
+<!-- in this example the ngClass is used as a template directive to put the fieldstyleclass into the class attribute (through ngclass)--> 		
 		<input type="text" [id]="servoyApi.getMarkupId() + '_input'"  
                 [ngClass]="fieldstyleclass"
                 [ngModel]="value"
                 (ngModelChange)="valueChanged($event)">
 <!-- button with a label text property binding and a onclick handler -->
-		<button (click)='click($event)' [id]="servoyApi.getMarkupId() + '_button'"
-		       [ngClass]='buttonstyleclass'>{{text}}</button>
+<!-- here you don't see the ngClass but we use a #button to set the style class through code'-->
+		<button [id]="servoyApi.getMarkupId() + '_button'"
+		       #button>{{text}}</button>
 	</div>
 <!-- some structure that is shown based on a property (*ngIf) and uses a repeater (*ngFor) to repeat over a the valuelist items -->
 	<div *ngIf="!hidevalues" class="sw_comp_values">
