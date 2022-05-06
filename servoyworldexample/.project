@@ -3,7 +3,7 @@
 	<name>servoyworldexample</name>
 	<comment></comment>
 	<projects>
-		<project>servoyworld</project>
+		<project>servoywordcomponent</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
