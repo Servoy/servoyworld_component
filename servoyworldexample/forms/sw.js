@@ -8,4 +8,9 @@
  */
 function click(event) {
 	application.output('clicked!')
+	
+	elements.servoyworldcomponent_1.requestFocus();
+	
+	elements.servoyworldcomponent_1.hidevalues = !elements.servoyworldcomponent_1.hidevalues;
+	
 }
