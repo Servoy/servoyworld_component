@@ -10,6 +10,6 @@
 	</div>
 <!-- some structure that is shown based on a property (ng-if) and uses a repeater to repeat over a the valuelist items -->
 	<div ng-if="!model.hidevalues" class="sw_comp_values">
-		<div ng-repeat="item in model.values track by $index">{{item.displayValue}}</div>
+		<div ng-repeat="item in model.values track by $index" ng-click="callServer()">{{item.displayValue}}</div>
 	</div>
 </div>

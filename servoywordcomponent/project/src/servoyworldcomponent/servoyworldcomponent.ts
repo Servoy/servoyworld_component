@@ -73,4 +73,12 @@ export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
         // this uses the ElementRef ViewChild field above to call focus() on the native dom element
         this.input.nativeElement.focus();
     }
+    
+    // the api method called from the template in the click on the "values" span
+    callServer() {
+        // servoyApi is provided by the ServoyBaseComponent
+    	this.servoyApi.callServerSideApi("sayHello", ["TiNG Client"]).then((value) => {
+        		  console.log(value);
+        	  })
+    }
 }

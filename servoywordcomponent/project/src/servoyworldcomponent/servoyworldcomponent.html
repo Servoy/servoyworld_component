@@ -14,6 +14,6 @@
 	</div>
 <!-- some structure that is shown based on a property (*ngIf) and uses a repeater (*ngFor) to repeat over a the valuelist items -->
 	<div *ngIf="!hidevalues" class="sw_comp_values">
-		<span style="display: block;" *ngFor="let item of values">{{item.displayValue}}</span>
+		<span style="display: block;" *ngFor="let item of values" (click)="callServer()">{{item.displayValue}}</span>
 	</div>
 </div>

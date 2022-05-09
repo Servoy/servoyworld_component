@@ -3,6 +3,7 @@
 	"displayName": "servoyworldcomponent",
 	"version": 1,
 	"definition": "servoyworld/servoyworldcomponent/servoyworldcomponent.js",
+	"serverscript": "servoyworld/servoyworldcomponent/servoyworldcomponent_server.js",
 	"libraries": [],
 	"model":
 	{
@@ -30,5 +31,14 @@
 				"delayUntilFormLoads": true,
 				"discardPreviouslyQueuedSimilarCalls": true
 	    }
+	 },
+	 "internalApi" : {
+	 	"sayHello" : {
+	 		"returns" : "string",
+	 		"parameters" : [{
+	 			"name": "value",
+	 			"type": "string"
+	 		}]
+	 	}
 	 }
 }

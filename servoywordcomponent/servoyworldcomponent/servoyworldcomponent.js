@@ -5,6 +5,7 @@ angular.module('servoyworldServoyworldcomponent',['servoy']).directive('servoywo
     	  model: '=svyModel',
 		  handlers: "=svyHandlers",
 		  api: "=svyApi",
+		  svyServoyapi: '='
       },
       controller: function($scope, $element, $attrs) {
     	  
@@ -13,6 +14,12 @@ angular.module('servoyworldServoyworldcomponent',['servoy']).directive('servoywo
     		  // use jquery to find the elements input and call focus on that
               var inputEl = $element.find('input');
               inputEl[0].focus();
+          }
+          
+          $scope.callServer = function() {
+        	  $scope.svyServoyapi.callServerSideApi("sayHello", ["NG1 Client"]).then(function(value){
+        		  console.log(value);
+        	  })
           }
       },
       templateUrl: 'servoyworld/servoyworldcomponent/servoyworldcomponent.html'
