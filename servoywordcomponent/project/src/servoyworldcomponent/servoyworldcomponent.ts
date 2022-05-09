@@ -56,10 +56,20 @@ export class Servoyworldcomponent extends ServoyBaseComponent<HTMLDivElement>{
         
         // if this is an incoming server side change for the button styleclass, 
         // use the renderer (provided by ServoyBaseComponent) to add this class to the native dom element through the button element ref
-        // this buttonstyleclass is a runtime property so can change at anytime in servoy code (elements.servoyworldcomponent.buttonstyleclass = 'something')
+        // this buttonstyleclass is a runtime property so can change at anytime in servoy code (elements.servoyworldcomponent.buttonstyleclass = 'something somethingelse')
         // so we need  to watch it through svyOnChanges which is always called if an input changes
         if (changes['buttonstyleclass']) {
-            this.getRenderer().addClass(this.button.nativeElement, this.buttonstyleclass);
+            const change = changes['buttonstyleclass'];
+            if (change.previousValue) {
+                // first go over the previous value to remove those
+                const array = change.previousValue.trim().split(' ');
+                array.filter((element: string) => element !== '').forEach((element: string) => this.renderer.removeClass(this.button.nativeElement, element));
+            }
+            if (change.currentValue) {
+                // add the current value if given, it can be a string with multiply classes separated by space, split it by the space and add class by class 
+                const array = change.currentValue.trim().split(' ');
+                array.filter((element: string) => element !== '').forEach((element: string) => this.renderer.addClass(this.button.nativeElement, element));
+            }
         }
     }
     
