@@ -11,7 +11,7 @@ After the conversion you should first do
 "npm install" 
 
 
-in the root of the component package (which holds the package.json file)
+in the root of the component package (which holds the package.json file), don't do "npm install" in the project dir, only in the root. The project dir is for packaging the component, it should never had a node_modules inside it because that can screw up the installation when you are developing the component.
 
 this will install the needed depedencies including developer depedencies for validation,codecompletion and eslinting
 
