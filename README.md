@@ -19,7 +19,7 @@ Running
 
 "npm run make_release"
 
-will build the package as a zip file that can be shipped and installed in the a Servoy Solution.
+will build the package as a zip file that can be shipped and installed in the a Servoy Solution. ([workspace]\[solution]\ng_web_packages dir)
 
 
 After npm install you can open this project or the generated component.ts file (in project/src) in a editor that understand language services like Visual Studio Code
