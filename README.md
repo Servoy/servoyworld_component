@@ -73,7 +73,8 @@ So they have the values that come from the server (server->client)
 These have a naming convention. They always map on an @Input property (that is mentioned in the servoy spec file) and they have then "propertyname" + "Change" and they need to be an new EventEmitter();
 Like this component has a "value" property (dataprovider property) which can also be pushed to the server, so we have a @Input value property and a @Output valueChange = new EventEmitter() property.
 
-In order to actually emit the change we need to do something like below once the this.value changes.
+In order to actually emit the change we need to do something like below once the this.value changes:
+
 valueChange().emit(this.value)
 
 @ViewChilds are fields that reference directly the dom elements that has the field value (#element, #button, #input), this way you can access any kind of ui element through code.
