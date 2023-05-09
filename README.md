@@ -33,7 +33,7 @@ No need to build the actual component (like doing npm run build in the component
 But you need to go to the Servoy workspace build directory, which directory this is can be seen in the Titanium NG Build console (ConsoleView in developer)
 there it ends with a line:
 
-"Total time to check/install Titanium NG target folder: yourworkspacefolder\.metadata\.plugins\com.servoy.eclipse.ngclient.ui\target"
+"Total time to check/install Titanium NG target folder: yourworkspacefolder\.metadata\.plugins\com.servoy.eclipse.ngclient.ui\target\the_solution_name"
 
 in that folder you need to run:
 
@@ -72,6 +72,9 @@ So they have the values that come from the server (server->client)
 @Output properties are the other way around those are Emitters (they emit a changed client value to let the server know the value is changed, so client -> server)
 These have a naming convention. They always map on an @Input property (that is mentioned in the servoy spec file) and they have then "propertyname" + "Change" and they need to be an new EventEmitter();
 Like this component has a "value" property (dataprovider property) which can also be pushed to the server, so we have a @Input value property and a @Output valueChange = new EventEmitter() property.
+
+In order to actually emit the change we need to do something like below once the this.value changes.
+valueChange().emit(this.value)
 
 @ViewChilds are fields that reference directly the dom elements that has the field value (#element, #button, #input), this way you can access any kind of ui element through code.
 
